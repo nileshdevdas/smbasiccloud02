@@ -179,8 +179,27 @@ Q1. okay i have a machine and now i want to install some software or my applicat
         Elastic IP 
 
 To Install a a basic WebServer on the Linux box 
-sudo yum install httpd -y  # install a http server 
-sudo chkconfig httpd on  # this will make the service automatic 
+# install a http server
+sudo yum install httpd -y   
+
+# this will make our http  service start automatic after restart 
+sudo chkconfig httpd on  
+
+# starts your service 
+sudo service httpd start
+
+# check the service is listening or not 
+netstat -an | grep LISTEN | grep 80 
+ps -ef | grep httpd 
+
+
+
+
+
+
+
+
+
 
 
 
