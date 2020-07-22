@@ -333,7 +333,80 @@ e)  index.html -->push it to your bucket and make it public read only  *****
 f)  enable the bucket webserver hosting feature (Bucket Hosting Feature)
 g)  if u wish to enable versioning 
         if someone overwrites a file on you webserver on file its easy recover the old version
-h) 
+
+
+# virtual private cloud 
+VPC 
+CIDR /-
+SUBNETS /-  
+ROUTES  /- 
+Internet Gateways /-
+
+
+CIDR : Block of Ip Addresss :- 
+VPC :(Virtual Private Cloud)  have  range of private ip address blocked your self ? 
+How many ip address should block whoch when i block how many are reserved 
+8'
+==============================================================================================================
+VPC is i want my own virtual private cloud my own ip set and own vlans (Subnets) i want a seperation 
+in my system :- 
+
+1. Is decide on  CIDR Block (Is a big cake more ip address )
+    10.10.0.0/16  (Reserve 65536 Ipaddress) (VPC needs a cidr Block )
+2. You need create Subnets from your VPC :- 
+    a) 10.10.1.0/24  + DB + AZ1 
+    b) 10.10.2.0/24  + DB + AZ2 
+    c) 10.10.3.0/24  + DB + AZ3
+
+3.  If you wish to access external internet or you public addresses to be assigned to you machines the 
+    you will need internet gateway Egress -- Going out :- 
+    You can create a IGW ---> 
+    Assign this IGW to your VPC ---> 
+
+4.  DHCP OPTS / Names Resolution / DNS REsolutions 
+
+5.  Routes : so if you dont assign route property you willl not be able to go out or let other come in 
+    you vpc resolution (Natting is a part of the routing )
+    Route - On you vpc   10.10.0.0/16  ---> Locally 
+    There a option where not local but on the internet -> =-====> 
+        that will 
+        0.0.0.0/0 -----> Internet Gateway ---> 
+
+6. Either you can make a use of the EC2 instance --> 
+        Choose you vpc see that you have correctly launched and with launch  
+        it has assined the require ip  address for the instance; 
+
+
+7. Optional:- Ip reservation ---> Assign this ip to your instance ---> 
+        Now shut it down and after shut down again restart the server your ip address remain intact 
+
+8.  Where are my logs where is my System output monitoring where is alerts 
+    where are anamolies and detections where is notifications .........
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
