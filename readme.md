@@ -192,6 +192,218 @@ sudo service httpd start
 netstat -an | grep LISTEN | grep 80 
 ps -ef | grep httpd 
 
+# conclusion of of you excercise 
+1. We have created a cloud vm on amazon 
+2. we have hosted a webserver on it 
+3. we have create a security rule to allow (80/22)
+4. we have successfully viewed the page on the http server 
+5. enable the icmp ping : 
+
+# what next I would want to create a Backup of machine i want to backitup
+
+What is snapshot is a backup of you hdd / drive / Volume 
+
+
+
+I want to restore my snapshot on a new machine :- 
+
+a) i first create a new machine 
+b) i shut down that machine 
+c) i detach its xvda or what ever are the Volumes i dont want 
+d) i have taken a snapshot from my old machine 
+e) i create a new volume from my snapshot 
+f) i attach that volume to my new instance as /dev/xvda
+g) i start my instance and now it should start with a pre installed webserver 
+h) i simply open the browser as the security group is same (80/22) open it should allow me to 
+    access the webserver without any thing : as its preinstalled and prestarted 
+
+
+#  Load Balancer as a service 
+we will create a load balancer and with that load balancer now we have 2 web servers behind 
+so at any given point the load balancer should serve the site from on of the systems (Targets)
+
+login to you linux box 
+
+cd /var/www/html
+sudo vi index.html 
+<h1> Welcome to Server-1</h1>
+esc + : + wq 
+
+BOth the machines
+
+
+
+
+
+1. how to create Machines snapshots
+2. how to create volumes from the snapshots
+3. how to attach the volumes to instances 
+4. how to create a machine from snapshot 
+5. how to add to webserver 
+6. how to to enable services 
+7. how to configure security groups 
+8. how to make use the http load balancer
+9. how the target groups define the load balancing 
+10. health protocol 
+12. we understood how the application was throwing 403 and lb had a issue 
+13. we understood how index.html 
+14. How configurre the complete End deployment on the IaaS 
+
+
+
+
+EC2 : 
+1. Instances 
+2. AMI 
+3. EBS (Blockstore)
+4. Volumes 
+5. Security Groups 
+6. Keys 
+7. ELB (Elastic Load Balancer)
+8. Target Groups 
+9. Snapshots 
+10. Regions
+11. Availibility Zone 
+12. VPC 
+13. Microservice -> 
+14. Iaas / PaaS / SaaS
+15. IAM :- 
+========================================================
+
+#  Storage and Networking 
+1. Storage :  With S3 : 
+Simple Storage Service  : S3 
+its a cloud storage system :- 
+a) S3 is a object Store any object can be stored 
+b) S3 can be accessed over a  http protocol 
+c) S3 is global although hosted in one region but its global
+d) S3 can be used to host a webserver :  you static webapplication 
+e) S3 can supports encryption 
+f) S3 support versioning 
+g) S3 Supports different Areas 
+    i) I can use to restore by db backup (DBAAS / RDS)
+    ii) S3 can be used to trigger lambda functions 
+    iii) S3 Can be use to transfer snapshots from one region to another 
+    iv)  S3 can be use for audit log storage 
+    v)  S3 can be used as file locker 
+h) THere are various ways where the implementation can be used for storage 
+    Storage Classes :-  
+        Standard  (Every day access )
+        Intilligent  frequentl . infrequently 
+        Single zone 
+        Glaciers 
+        Deep Archives 
+
+
+
+s3://aws  (reserved bucket)
+s3://www.vinsys.com.bucket001
+S3 is global uuid standardization 
+
+
+a) Bucket for hosting a webserver 
+b) To Storage our Files and other with versioning 
+c) Bucket to even study other type of scenario
+
+
+# understand what is virtualization what containers
+
+
+
+
+
+
+
+S3 Stands for Simple Storage Service 
+S3 can be used for any type of Storage 
+
+
+1. HOw do i host a webserver on the S3 Bucket 
+------------------------------------------------
+a) First you need to decide bucket name 
+b) you need to create the bucket and dont forget although buckets are global but they still get 
+    create in region for thier physical presence 
+c) You need to get the bucket access mode to public because you have make page public if public 
+    access is blocked you will not able to host and make pages available anonymous users ***** 
+d) You will- need to have static aspx/aps/jsp/php (Not Static pages server compiled) (WebServer)
+    text/html , image/*  application/javascript (any content that is directly servable to the 
+    user pages browsers) non server computed are good candiates for hosting 
+
+e)  index.html -->push it to your bucket and make it public read only  *****
+f)  enable the bucket webserver hosting feature (Bucket Hosting Feature)
+g)  if u wish to enable versioning 
+        if someone overwrites a file on you webserver on file its easy recover the old version
+h) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. you have added a http server
+2. you have added a rule to allow 80
+3. you have start the server  sudo service httpd start 
+4. you have use the domain/ip (public ) and
+
+
+
+
+
+
+
+
+
+
 
 
 
