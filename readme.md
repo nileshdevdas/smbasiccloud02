@@ -457,11 +457,11 @@ Step 1 :  I will create a new VM
             No changes standard way of create vm : 
             Chose a images which docker yum avilablity -> 
 Step 2 :  Inside VM i will install docker 
-            # sudo yum install httpd  # for install http server 
             # sudo yum install docker 
             # sudo chkconfig docker on 
             # sudo service docker start 
-            
+            # sudo docker ps   # to check if there are any running containers 
+
 Step 3 :  pull some docker image and create and host container 
 Step 4 :  i am going to modify this container and add my own files to file / config / app to it 
 Step 5 :  i am going to commit the container in my name and push it back to th docker hub by myname 
