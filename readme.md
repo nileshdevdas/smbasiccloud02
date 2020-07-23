@@ -549,11 +549,80 @@ sudo docker run --name nileshtc4  -p83:8080 -d  tomcat
 3.  how many container 
     sudo docker ps 
 
+4.  sudo docker exec -it  nileshtc1  bash 
+    Containers Terminal 
+
+
+# how to check if port is already reserve 
+    netstat -an | grep 80 
+    LISTEN 
+
+5.  The command to get the private ip of each container 
+    sudo  docker inspect  <instance_name>
+
+
+1. Pull a image 
+2. Craete container 
+3. Publish the ports 
+4. Create more containers 
+5. To Take a container --> modify it ---> THen convert in a image and push it back to the docker 
+
+docker pull # optioa
+docker run 
+docker exec / docker cp  # container modified 
+docker commit   Converted to image 
+docker login  # login to my docker hub account 
+docker push   #  push to docker hub 
+
+# go to doker hub and check if you image published or not -# 
+
+Now when you publish image today tommorow we use the samee thing on ECS (and pull the implementation)of container 
+and directly run on the cloud 
+
+
+1. Docker images are somethong which you can deploy anywhere local , in prem, on server , on cloud 
+2. HOw to create a image 
+    a) From Build File
+        docker build ........  
+    b) Extend a image 
+        docker pull 
+        docker run 
+        docker exec / cp /edit the container 
+        docker commit 
+        docker login 
+        dockeer push 
+
+3.  Share image to the users 
+        docker pull 
+
+
+docker pull imagename
 
 
 
 
 
+
+
+# how to make my container serve my application 
+
+step 1: 
+sudo docker ps  and find the name of the container you wish to edit 
+
+nileshtc1 
+
+Step 2 : 
+sudo docker exec -it  nileshtc1  bash 
+# cd webapps    (This is a directory where tomcat apps are deployed)
+pwd ==> Check if you are in the webapps folder 
+
+# mkdir ROOT 
+#  cd ROOT 
+
+# echo "<h1> nilesh</h1>" > index.html 
+
+# exit   
+To come out of the cintainer 
 
 
 
