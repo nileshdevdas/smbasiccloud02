@@ -488,6 +488,102 @@ docker
 
 
 
+1. pull  a container image : 
+    the images is on docker hub and you want the image to be cached locally ? 
+2.  You want to use image and then create container 
+
+
+pull image from the hub 
+        create  --> Container 
+                edit or ---> Makechanges container 
+                        --> Commit 
+                                --> Image ==> 
+                                        Push --> Docker hub
+                        
+sudo docker ps 
+How many container you have running in your system 
+sudo docker ps -a   
+this tells you how many docker running + stooped (All )  container you have in you system 
+how to find images on the docker ub 
+
+sudo docker search "keyword" 
+it will search all the docker  image that match you keyword 
+
+
+
+Image is  =   AMI  =  The bundled Software and COnfig + App as zip / archive (Build MOde)
+
+Container =   VM   = RUninng Application + Binaries ----> Runmode
+
+# creating a container and running a container 
+Container Creation does not mean you are staring :- 
+
+# Combo command Create + Run 
+
+sudo docker run 
+
+
+
+How to pull a image in you local system 
+
+sudo docker pull <imageName>
+# sudo docker pull tomcat 
+
+How run a tomcat 
+sudo docker run --name <containerName> -p<hostPort>:<targetPort>  -d   <imageName>
+
+###########################################################
+1. sudo docker pull tomcat 
+############################################################
+sudo docker run --name <containerName> -p<hostPort>  -d  <imageName>
+sudo docker run --name nileshtc1  -p80:8080 -d  tomcat
+sudo docker run --name nileshtc2  -p81:8080 -d  tomcat
+sudo docker run --name nileshtc3  -p82:8080 -d  tomcat
+sudo docker run --name nileshtc4  -p83:8080 -d  tomcat
+##############################################################
+
+2. if you have you security group opened ports 80/81/82/83 
+    http://publicip:80  ---> This should serve the application form the container 
+    http://publicip:81 ----> Serve tomcat page 
+
+3.  how many container 
+    sudo docker ps 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
