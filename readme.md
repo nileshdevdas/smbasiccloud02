@@ -349,41 +349,258 @@ How many ip address should block whoch when i block how many are reserved
 8'
 ==============================================================================================================
 VPC is i want my own virtual private cloud my own ip set and own vlans (Subnets) i want a seperation 
-in my system :- 
-
+in my system :- r
 1. Is decide on  CIDR Block (Is a big cake more ip address )
     10.10.0.0/16  (Reserve 65536 Ipaddress) (VPC needs a cidr Block )
 2. You need create Subnets from your VPC :- 
     a) 10.10.1.0/24  + DB + AZ1 
     b) 10.10.2.0/24  + DB + AZ2 
     c) 10.10.3.0/24  + DB + AZ3
-
 3.  If you wish to access external internet or you public addresses to be assigned to you machines the 
     you will need internet gateway Egress -- Going out :- 
     You can create a IGW ---> 
     Assign this IGW to your VPC ---> 
-
 4.  DHCP OPTS / Names Resolution / DNS REsolutions 
-
 5.  Routes : so if you dont assign route property you willl not be able to go out or let other come in 
     you vpc resolution (Natting is a part of the routing )
     Route - On you vpc   10.10.0.0/16  ---> Locally 
     There a option where not local but on the internet -> =-====> 
         that will 
         0.0.0.0/0 -----> Internet Gateway ---> 
-
 6. Either you can make a use of the EC2 instance --> 
         Choose you vpc see that you have correctly launched and with launch  
         it has assined the require ip  address for the instance; 
-
-
 7. Optional:- Ip reservation ---> Assign this ip to your instance ---> 
         Now shut it down and after shut down again restart the server your ip address remain intact 
-
 8.  Where are my logs where is my System output monitoring where is alerts 
     where are anamolies and detections where is notifications .........
+#  Container and Docker How autonomous application are Deployed 
+---------------------------:
+nilesh.devdas@outlook.com
+---------------------------:
 
-    
+
+---------------------------
+Bare Bones:- 
+Virtualization :- 
+Containerization :-
+---------------------------
+
+1. Is your development Environment Same as Production  ? No 
+2. what you build is not what you test and is not what you ship ? 
+3. How much time does it take to create a running prod like / Cloine like Environment 
+4. How to Rollback to a specific version of the whole application 
+5. Can i scale by a click of a button so that i can scale to a  Number desired (++1  --1)
+6. How do i version my binaries ? --->
+7. Deployment is is rollback is not 
+8. Where is Service Delivery ? 
+    How much you Develop ? How much you Deliver 
+
+Containerization :-
+What is difference between environment A and Environment B  ? 
+Configuration ....... 
+A) Property Files 
+B) Enviromental Parameters 
+C) Storage folders/ Paths 
+D) Memory Cpu 
+E) Network 
++++
+My Binaries Together 
+Then it becomes a deployable ready image 
+
+VM Snapshot = AMI => 
+A machine is huge :-  It time boot is high because it comes with Kernel 
+Its Maintenence is high because it comes with license, Os Management , Antivirus, and Blah blah 
+
+
+Virtualization  v/s Containerization 
+1 Physical Box := 
+24 Cores = 48 Threads : 24 Cores  1 = 2 Thread -->
+4 Cores assign to one machine --> VM (4 VPU) and then i will assigne such 8 VM's For this 
+
+i have a service --> Supposed to scale and delploy 
+1 VM of this needs to deploy my 10 services 
+login 
+blogs 
+catlogue
+reviews 
+booking 
+logging 
+-->  1. How and where do i control each service ? 
+-->  2. The Service Login --> Problem that i dont ports 80 --> Login1/Login2/Login3
+-->  3. how to monitor 3 services where 4 instance whether healthy whether down ? 
+
+
+Build --> Application that is autonomous (Microservice)
+When the applications the environment start 
+
+We start Environment then the application can bestarted 
+We Start the service --> The environment automatically start -> 
+
+How many of you can configure a softwar ELK or Configura LogShaper 
+What if i give you a ready made deployimage 
+
+AMI ---> VM ====> Started  ===> Has its own Storage/Network/RUnt FIle System  (Individual Kerner)
+
+DOcker Image --> Containers --> Started   ==> Own Storage / Network / Run File System / I share the same Kernel 
+
+
+
+1. Maven : Pom.xml 
+2. config : Nuget 
+3. Python ; requirements.txt 
+4. Node : package.json 
+
+Moder Application --> Standar
+------------------------------------------------------------------------------------------------------------------
+Step 1 :  I will create a new VM 
+            No changes standard way of create vm : 
+            Chose a images which docker yum avilablity -> 
+Step 2 :  Inside VM i will install docker 
+            # sudo yum install httpd  # for install http server 
+            # sudo yum install docker 
+            # sudo chkconfig docker on 
+            # sudo service docker start 
+            
+Step 3 :  pull some docker image and create and host container 
+Step 4 :  i am going to modify this container and add my own files to file / config / app to it 
+Step 5 :  i am going to commit the container in my name and push it back to th docker hub by myname 
+Step 6 :  i am going to give you all this image which you can pull and run at your need using the 
+          docker commands 
+
+Do i really Need to do all the Step 1 to Step 6 The answer is no : I can directly pull a image from 
+the repository and instal that container on ECS ---> 
+
+ECS --> Elastic Container Service --> 
+    a) Cluster of machines with Docker installed already on it and so that i can simply run the 
+        images without logging in any machine and scale up scale down or do what every i wish 
+        to achieve ina Step 1 to Step 6 Just from the AWS Console 
+
+a) The first Requirement is to understand how docker works ---> 
+b) When i login to the ECS --> 
+================================================================================================================
+
+
+
+docker 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
