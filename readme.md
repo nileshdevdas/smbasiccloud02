@@ -629,6 +629,154 @@ To come out of the cintainer
 
 
 
+We are going understand newer type of service : ECS : 
+Elastic Container Service: 
+Deploying your containers to the Cloud : Directly no special action except 
+Creating a elastic cluster 
+
+Autoscaling :- 
+
+Cluster :- Is logical A group of machines/ instance / containers/ anything is world which 
+coherently works as a single logical unit is defined a cluster : Active / Active 
+Active / Passive    , Cluster  Active / Cold 
+
+How to deploy containers on the ECS : 
+
+ECS and EKS :- 
+ECS is purely self managed clustering only with DOcker and docker Swarm and added fearture from AWS 
+EKS this pure Kubernetes Api / Pod And Service Delivery + Docker + AWS UI and Features 
+
+What are we going to achieve today :- 
+1. We create a image 
+2. We pushed a image 
+3. We now wish to use this image directly on the aws ? 
+
+# how to use this image on aws 
+    a) install ec2 + install a docker  + pull the image + create Container + map the ports  (Your way)
+        the EC2 Way of running your image 
+
+# do i really need to isntall docker on my machine or any machine to create a image 
+    the answer no you dont need how : ? 
+
+# i can create image locally / or docker hub or any machine the final goal is to push the image 
+    to the image repository 
+
+A Cluster ECS is not  a container Cluster : - - -- - 
+This is a EC2 Machines + AutoScaling 
+
+Normally you would create a EC2 Machine + you would install DOcker this way you would create multiple machines 
+Now to join them together u will need some cluster code/config --. Docker Swarm would support but the problem is 
+you will need a command line --> Now if you dont want command line and want to do it tranparently then 
+AWS WOuld
+
+AWS --> EC2 --> Installs the ECS Agent -->  And from the UI when you click actions ---> 
+Sends the actions to the ECS Agent which is runing inside your machine ... and that agent in turn does
+the required job for you 
+
+This provides me with Autoscale :- 
+Template --> if my CPU usage is higher than 50% scale up when it goes less than 30% scale down 
+
+
+Clusters of the AWS : - ECS ---> Transparently is going to create Cluster with AutoScale
+
+CLUSTER :- it is a cluster of using AWS EC2 Machines with a Special AMI that has agent installed inside it 
+so that i can control the docker inside the EC2 using the AWS ECS UI ++ Autoscaling Feature 
+
+A role and USer and Group  --> 3
+
+A user : username and password : 
+A Group : A set of users which has a specift set of policies of rights 
+A Role :  is never assgined to a user a role is assgined to service which its like 
+          A service if it wants on your behalf to call other services then you would need that service 
+        to have role to access the other service 
+
+By Creating a ECS Cluster did i really create anything different no i did 
+I am Still using the EC2 Instance + Docker Installed + Agent ===> 
+
+in ECS : 
+A container = EC2 Instae or 1 Fargate Instance with  Amazon Docker AMI Instaled :- 
+A docker enabled EC2 VM :- + Agent So i can Control Cluster Remottely
+
+What is a Task : 
+A task is a  Docker Run Template :  Which Means When you run a Task : you run a container := 
+So when you want to create a Task  you have Task Definition and Specify where is my application :- 
+Where is my application-image --> Docker image 
+How Cpu 
+How much memory 
+How Much Threads 
+Where to do logging 
+other attirbutes 
+
+A task is umanaged container :- 
+# a task is unmanaged container and a service is managed 
+    if tommorow you wish to scale up and scale down only container or tasks then its not possble 
+    But if you convert you task to  a service 
+    a) A load balancer over you tasks --> Service 
+    b) Autoscaling for your container 
+
+
+    Tomcat ---81 / 82 / 83 / 83 --> You Did it manually 
+    LB --> Mulitple tomcats --> 
+
+How and when i would be using service / task 
+Testing -> Task are good 
+For Production We need to convert Tasks to Services :- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
